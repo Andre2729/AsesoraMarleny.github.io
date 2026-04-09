@@ -157,7 +157,6 @@
     .asesor-box { position: absolute; top: 120px; right: 48px; display: flex; align-items: center; gap: 12px; background: rgba(28, 51, 32, 0.8); border: 1px solid var(--borde); border-radius: 12px; padding: 10px; backdrop-filter: blur(10px); z-index: 3; }
     .asesor-img { width: 180px; height: 180px; border-radius: 5px; /* cuadrada */ object-fit: cover; border: 2px solid var(--dorado); }
 
-    /* ===== RESPONSIVE PRO ===== */
 @media (max-width: 768px) {
 
   /* GENERAL */
