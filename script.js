@@ -12,12 +12,11 @@ window.addEventListener('load', function () {
 document.getElementById('btnWhatsapp').addEventListener('click', function() {
     // 1. Solo capturamos el nombre y el terreno de interés
     const nombre = document.querySelector('input[name="nombre"]').value;
-    const terreno = document.querySelector('select[name="terreno"]').value;
     const mensajeExtra = document.querySelector('textarea[name="mensaje"]').value;
 
     // 2. Validación rápida
-    if (nombre === "" || terreno === "") {
-        alert("Por favor, ingresa tu nombre y el terreno que te interesa.");
+    if (nombre === "") {
+        alert("Por favor, ingresa tu nombre.");
         return;
     }
 
@@ -26,15 +25,14 @@ document.getElementById('btnWhatsapp').addEventListener('click', function() {
 
     // 4. Creamos un mensaje tipo "Lead" profesional
     // Usamos saltos de línea (%0A) para que el mensaje se vea ordenado
-    let textoFinal = `Hola, mi nombre es *${nombre}* y vi su web *TierrasEnChancay*.%0A%0A`;
-    textoFinal += `Estoy interesado en el terreno: *${terreno}*.%0A`;
+    let textoFinal = `Hola, mi nombre es *${nombre}* y vi su web *TierrasEnChancay*.`;
     
     if (mensajeExtra !== "") {
         textoFinal += `Consulta adicional: ${mensajeExtra}`;
     }
 
     // 5. Abrimos WhatsApp
-    const url = `https://wa.me/${miNumero}?text=${textoFinal}`;
+    const url = `https://wa.me/${miNumero}?text=${encodeURIComponent(textoFinal)}`;
     window.open(url, '_blank');
 });
 
